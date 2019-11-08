@@ -10,40 +10,46 @@
 library(shiny)
 
 # Define UI for application that draws a histogram
-shinyUI(fluidPage(theme = "bootstrap.min.css", 
-                  navbarPage("Fidelity", theme = "bootstrap.min.css",
-                             tabPanel("Home",
-                                      sidebarPanel(
-                                          fileInput("file", "File input:"),
-                                          textInput("txt", "Text input:", "general"),
-                                          sliderInput("slider", "Slider input:", 1, 100, 30),
-                                          tags$h5("Deafult actionButton:"),
-                                          actionButton("action", "Search"),
-                                          
-                                          tags$h5("actionButton with CSS class:"),
-                                          actionButton("action2", "Action button", class = "btn-primary")
-                                      ),
-                                      
-                             ),
-                             tabPanel("Sector Fund", 
-                                      mainPanel(
-                                          tabsetPanel(
-                                              tabPanel("Tab 1",
-                                                       h4("Table"),
-                                                       tableOutput("table"),
-                                                       h4("Verbatim text output"),
-                                                       verbatimTextOutput("txtout"),
-                                                       h1("Header 1"),
-                                                       h2("Header 2"),
-                                                       h3("Header 3"),
-                                                       h4("Header 4"),
-                                                       h5("Header 5")
-                                              ),
-                                              tabPanel("Tab 2", "This panel is intentionally left blank"),
-                                              tabPanel("Tab 3", "This panel is intentionally left blank")
-                                          )
-                                      )),
-                             tabPanel("International Fund", "This panel is intentionally left blank"),
-                             tabPanel("Bond Fund")
-                  )
-)))
+library(shiny)
+
+# Define UI for application that draws a histogram
+shinyUI(tagList(fluidPage(theme = "bootstrap.css", 
+                          navbarPage("Fidelity", 
+                                  
+                                       tabPanel("Home",
+                                                tags$h2("Two-semester Fidelity Project for Mutual Funds: Sector, Bond, and International"),
+                                                tags$br()
+                                                tags$h3("Our Group:")
+                                                
+                                       ),
+                                       tabPanel("Sector Fund", 
+                                                mainPanel(
+                                                  tabsetPanel(
+                                                    tabPanel("Tab 1",
+                                                             h4("Table"),
+                                                             tableOutput("table"),
+                                                             h4("Verbatim text output"),
+                                                             verbatimTextOutput("txtout"),
+                                                             h1("Header 1"),
+                                                             h2("Header 2"),
+                                                             h3("Header 3"),
+                                                             h4("Header 4"),
+                                                             h5("Header 5")
+                                                    ),
+                                                    tabPanel("Tab 2", "This panel is intentionally left blank"),
+                                                    tabPanel("Tab 3", "This panel is intentionally left blank")
+                                                  )
+                                                )),
+                                       tabPanel("International Fund", sidebarPanel(
+                                         fileInput("file", "File input:"),
+                                         textInput("txt", "Text input:", "general"),
+                                         sliderInput("slider", "Slider input:", 1, 100, 30),
+                                         tags$h5("Deafult actionButton:"),
+                                         actionButton("action", "Search"),
+                                         
+                                         tags$h5("actionButton with CSS class:"),
+                                         actionButton("action2", "Action button", class = "btn-primary")
+                                       )),
+                                       tabPanel("Bond Fund")
+                                     )
+                          )))
