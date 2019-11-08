@@ -10,46 +10,49 @@
 library(shiny)
 
 # Define UI for application that draws a histogram
-library(shiny)
-
-# Define UI for application that draws a histogram
-shinyUI(tagList(fluidPage(theme = "bootstrap.css", 
-                          navbarPage("Fidelity", 
-                                  
-                                       tabPanel("Home",
-                                                tags$h2("Two-semester Fidelity Project for Mutual Funds: Sector, Bond, and International"),
-                                                tags$br()
-                                                tags$h3("Our Group:")
-                                                
-                                       ),
-                                       tabPanel("Sector Fund", 
-                                                mainPanel(
-                                                  tabsetPanel(
-                                                    tabPanel("Tab 1",
-                                                             h4("Table"),
-                                                             tableOutput("table"),
-                                                             h4("Verbatim text output"),
-                                                             verbatimTextOutput("txtout"),
-                                                             h1("Header 1"),
-                                                             h2("Header 2"),
-                                                             h3("Header 3"),
-                                                             h4("Header 4"),
-                                                             h5("Header 5")
-                                                    ),
-                                                    tabPanel("Tab 2", "This panel is intentionally left blank"),
-                                                    tabPanel("Tab 3", "This panel is intentionally left blank")
-                                                  )
-                                                )),
-                                       tabPanel("International Fund", sidebarPanel(
-                                         fileInput("file", "File input:"),
-                                         textInput("txt", "Text input:", "general"),
-                                         sliderInput("slider", "Slider input:", 1, 100, 30),
-                                         tags$h5("Deafult actionButton:"),
-                                         actionButton("action", "Search"),
-                                         
-                                         tags$h5("actionButton with CSS class:"),
-                                         actionButton("action2", "Action button", class = "btn-primary")
-                                       )),
-                                       tabPanel("Bond Fund")
-                                     )
-                          )))
+shinyUI(tagList(fluidPage(#tags$head(tags$link(rel = "stylesheet", type = "text/css", href = "bootstrap.min.css")), #First way to style
+  #theme = "bootstrap.min.css",   #Second way to style
+  #tags$head(tags$style(HTML("body{ background: green; }"))), #Third way to style ? 
+  
+  
+  #Should we only use green background or still try to figure out how to use boostrap.min.css make
+  #the position become horizontal rather than vertial? 
+  
+  navbarPage("Fidelity", #position = "fixed-top", inverse = T, 
+             tabPanel("Home",
+                      tags$br(),
+                      tags$br(),
+                      tags$h2("Two-semester Fidelity Project for Mutual Funds: Sector, Bond, and International"),
+                      tags$br(),
+                      tags$h3("Our Group:")       
+             ),
+             
+             
+             tabPanel("Sector Fund", 
+                      mainPanel(
+                        tabsetPanel(
+                          tabPanel("Tab 1",
+                                   h4("Table"),
+                                   tableOutput("table")))
+                      )),
+             
+             
+             tabPanel("International Fund", 
+                      tags$br(),
+                      tags$h2("Explanation"),
+                      sidebarPanel(
+                        selectInput("funds", "Selected International Funds:", c("FWWFX","FHKCX","FIVLX","FIVFX")),
+                        sliderInput("nav", "NAV(net asset value per share)",0,10000,0),
+                        selectInput("index", "Indices", c("MAKE A DATA FRAME?")),
+                        
+                        tags$h5(),
+                        actionButton("action", "Search"),
+                        
+                        tags$h5("actionButton:"),
+                        actionButton("action2", "Action button", class = "btn-primary")
+                      )),
+             
+             
+             tabPanel("Bond Fund")
+  )
+)))
