@@ -13,14 +13,16 @@
  */
 @import url("https://fonts.googleapis.com/css?family=Montserrat");
 :root {
+  --black: #0d0c0c;
   --blue: #007bff;
   --indigo: #6610f2;
   --purple: #6f42c1;
   --pink: #e83e8c;
-  --red: #FF7851;
+  --red: #f20e1d;
   --orange: #fd7e14;
   --yellow: #FFCE67;
   --green: #56CC9D;
+  --darkgreen: #059905;
   --teal: #20c997;
   --cyan: #6CC3D5;
   --white: #fff;
@@ -67,7 +69,7 @@ body {
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #888;
+  color: #0d0c0c;
   text-align: left;
   background-color: #fff;
 }
@@ -100,6 +102,7 @@ abbr[data-original-title] {
           text-decoration: underline dotted;
   cursor: help;
   border-bottom: 0;
+  color: #059905;
   text-decoration-skip-ink: none;
 }
 
@@ -375,7 +378,7 @@ h1, h2, h3, h4, h5, h6,
   font-family: "Montserrat", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   font-weight: 500;
   line-height: 1.2;
-  color: #5a5a5a;
+  color: #0d0c0c;
 }
 
 h1, .h1 {
@@ -2559,7 +2562,7 @@ textarea.form-control {
 .btn {
   display: inline-block;
   font-weight: 400;
-  color: #888;
+  color: #;
   text-align: center;
   vertical-align: middle;
   -webkit-user-select: none;
@@ -3475,7 +3478,7 @@ input[type="button"].btn-block {
 }
 
 .dropdown-item.disabled, .dropdown-item:disabled {
-  color: #888;
+  color: #0d0c0c;
   pointer-events: none;
   background-color: transparent;
 }
@@ -3489,7 +3492,7 @@ input[type="button"].btn-block {
   padding: 0.5rem 1.5rem;
   margin-bottom: 0;
   font-size: 0.875rem;
-  color: #888;
+  color: #0d0c0c;
   white-space: nowrap;
 }
 
@@ -4458,10 +4461,10 @@ input[type="button"].btn-block {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
