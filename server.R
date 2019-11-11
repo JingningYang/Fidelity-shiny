@@ -9,14 +9,13 @@
 
 library(shiny)
 
-# Define server logic required to draw a histogram
 shinyServer(function(input, output) {
-
-    output$txtout <- renderText({
-        paste(input$txt, input$slider, format(input$date), sep = ", ")
-    })
+  #######International fund
     output$table <- renderTable({
         head(cars, 4)
     })
+    
+    output$inf <- DT::renderDataTable({
+      data <- Data
 }
-)
+)})
