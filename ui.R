@@ -81,8 +81,13 @@ shinyUI(tagList(fluidPage(theme = "bootstrap.css",
                                     selectInput("sector","Sector Funds:",c("FSAIX","FRESX","FREMEX","FSDCX","FSPCX")),
                                     dateRangeInput("date", strong("Date range"), start = "2014-01-01", end = "2018-12-31",
                                                    min = "2014-01-01", max = "2018-12-31")
-                                  )),
-
+                                  ),
+                                  mainPanel(
+                                    selectInput("dataset", "Choose a fund:",
+                                                choices = c("FSAIX","FRESX","FREMEX","FSDCX","FSPCX")),
+                                    downloadButton("downloadData", "Download")
+                                  ),
+                                  ),
                           tabPanel("International Fund", 
                                    tags$br(),
                                    tags$h2("Select 5 international mutual funds:"),
