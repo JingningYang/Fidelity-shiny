@@ -61,8 +61,8 @@ signals <- c("Comparison" = "sigComparison",
 relations <- c("Less than" = "lt", "Greater Than" = "gt")
 
 title <- tags$a(href="https://www.fidelity.com", 
-                tags$img(src="Fid_Logo_Rev_green.jpg", height="55", width="130")
-                )
+                tags$img(src="Fid_Logo_Rev_green.jpg", height="55", width="130"))
+
 footer <- tags$a(href="http://www.bu.edu/mssp/",
                  tags$img(src="Boston_University_Terriers_logo.jpg", height="55", width="80"))
 
