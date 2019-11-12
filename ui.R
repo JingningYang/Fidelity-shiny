@@ -15,8 +15,11 @@ shinyUI(tagList(fluidPage(theme = "bootstrap.css",
                              ),
                         
                          tabPanel("Sector Fund",
+                                  titlePanel("Sector Fund"),
                                   sidebarPanel(
-                                    selectInput("sector","Sector Funds:",c("FSAIX","FRESX","FREMEX","FSDCX","FSPCX"))
+                                    selectInput("sector","Sector Funds:",c("FSAIX","FRESX","FREMEX","FSDCX","FSPCX")),
+                                    dateRangeInput("date", strong("Date range"), start = "2014-01-01", end = "2018-12-31",
+                                                   min = "2014-01-01", max = "2018-12-31"),
                                   )),
 
                           tabPanel("International Fund", 
