@@ -24,13 +24,7 @@ shinyUI(tagList(fluidPage(theme = "bootstrap.css",
                              ),
                         
                         
-                         tabPanel("Sector Fund", 
-                                      mainPanel(
-                                          tabsetPanel(
-                                              tabPanel("Tab 1",
-                                                       h4("Table"),
-                                                       tableOutput("table")))
-                                      )),
+                         tabPanel("Sector Fund"),
                         
                         
                           tabPanel("International Fund", 
