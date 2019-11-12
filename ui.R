@@ -14,13 +14,11 @@ shinyUI(tagList(fluidPage(theme = "bootstrap.css",
                               tags$h3("Our Group:")       
                              ),
                         
-                        
                          tabPanel("Sector Fund",
                                   sidebarPanel(
                                     selectInput("sector","Sector Funds:",c("FSAIX","FRESX","FREMEX","FSDCX","FSPCX"))
                                   )),
-                        
-                        
+
                           tabPanel("International Fund", 
                                    tags$br(),
                                    tags$h2("Select 5 international mutual funds:"),
