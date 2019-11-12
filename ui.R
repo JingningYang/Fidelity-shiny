@@ -10,6 +10,7 @@
 library(shiny)
 
 title <- tags$a(href="https://www.fidelity.com", 
+                tags$img(src="Boston_University_Terriers_logo.jpg", height="55", width="80"),
                 tags$img(src="Fid_Logo_Rev_green.jpg", height="55", width="130"))
 
 shinyUI(tagList(fluidPage(theme = "bootstrap.css",   
