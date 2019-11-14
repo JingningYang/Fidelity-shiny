@@ -96,7 +96,13 @@ shinyUI(tagList(fluidPage(theme = "bootstrap.css",
                                    tags$br(),
                                    tags$h2("For each mutual fund, we used at least 5 indices to compare their NAV from 2014 to 2018"),
                                    sidebarPanel(
-                                     selectInput("funds", "Selected International Funds:", c("FWWFX","FHKCX","FIVLX","FIVFX")),
+                                     tags$h4("Selected funds:"),
+                                     checkboxInput("fwwfx", "FWWFX"),
+                                     checkboxInput("fhkcx", "FHKCX"),
+                                     checkboxInput("fivlx", "FIVLX"),
+                                     checkboxInput("fivfx", "FIVFX"),
+                                     checkboxInput("figrx", "FIGRX"),
+                                     
                               #Show the graph of the NAV of the fund from 2014-2018
                                      sliderInput("nav", "NAV(net asset value per share)",0,10000,0),
                               #?
