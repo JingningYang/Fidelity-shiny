@@ -1,0 +1,12 @@
+name: fidelity-shiny
+title: Fidelity-shiny
+username: jingning
+account: jingning
+server: bu-rstudio-connect.bu.edu
+hostUrl: http://bu-rstudio-connect.bu.edu:3939/__api__
+appId: 76
+bundleId: 155
+url: http://bu-rstudio-connect.bu.edu:3939/content/76/
+when: 1576548683.3089
+asMultiple: FALSE
+asStatic: FALSE
